@@ -10,3 +10,5 @@ ja:
     password: パスワード
     first_name: 名
     last_name: 姓
+    board_title: タイトル
+    board_body: 本文

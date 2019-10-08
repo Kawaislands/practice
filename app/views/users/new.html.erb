@@ -2,30 +2,30 @@
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1>ユーザー登録</h1>
-      <form>
+      <%= form_with model: @user, local: true do |form| %>
         <div class="form-group">
-          <label for="user_last_name"><%= t('activerecord.attributes.user.last_name') %></label>
-          <input class="form-control" type="text" name="user[last_name]" id="user_last_name" />
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: "form-control" %>
         </div>
         <div class="form-group">
-          <label for="user_first_name"><%= t('activerecord.attributes.user.first_name') %></label>
-          <input class="form-control" type="text" name="user[first_name]" id="user_first_name" />
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, class: "form-control" %>
         </div>
         <div class="form-group">
-          <label for="user_email"><%= t('activerecord.attributes.user.email') %></label>
-          <input class="form-control" type="email" name="user[email]" id="user_email" />
+          <%= form.label :email %>
+          <%= form.email_field :email, class: "form-control" %>
         </div>
         <div class="form-group">
-          <label for="user_password"><%= t('activerecord.attributes.user.password') %></label>
-          <input class="form-control" type="password" name="user[password]" id="user_password" />
+          <%= form.label :password %>
+          <%= form.password_field :password, class: "form-control" %>
         </div>
         <div class="form-group">
-          <label for="user_password_confirmation"><%= t('activerecord.attributes.user.password_confirmation') %></label>
-          <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <input type="submit" name="commit" value="登録" class="btn btn-primary" data-disable-with="登録" />
-      </form>
-      <%= link_to 'ログイン', "/login", class: "text-center" %>
+        <input type="submit" name="commit" value="登録" class="btn btn-primary" data-disable-with="登録"/>
+      <% end %>
+      <%= link_to 'ログイン', login_path, class: "text-center" %>
     </div>
   </div>
 </div>
